@@ -5,7 +5,7 @@ $(".container").append(ndiv);
 //array of topics
 var topics = ["Archer", "Rick And Morty", "American Dad", "Mad Men","Breaking Bad"];
 //function to build buttons
-$(document).on("ready", function(){
+$(document).ready(function(){
     topics.forEach(x => {
         var btn = $("<button>");
         btn.text(x);
@@ -88,21 +88,23 @@ $(document).on("click", ".search", function(){
 
     });
 
-    $(document).on("click", ".gif", function() {
-       // $(".gif").on("click", function(){
-        //look at the state to determine which url to update the src with. 
-        console.log(this);
-        var state = $(this).attr("data-state");
-        console.log(state);
-        if (state === "still") {
-            console.log('State was still');
-            $(this).attr("src", $(this).attr("data-animate"));
-            $(this).attr("data-state", "animate");
-          } else {
-            console.log('State was animated');
-            $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still");
-          }
-
-    })
 });
+
+
+$(document).on("click", ".gif", function() {
+    // $(".gif").on("click", function(){
+     //look at the state to determine which url to update the src with. 
+     console.log(this);
+     var state = $(this).attr("data-state");
+     console.log(state);
+     if (state === "still") {
+         console.log('State was still');
+         $(this).attr("src", $(this).attr("data-animate"));
+         $(this).attr("data-state", "animate");
+       } else {
+         console.log('State was animated');
+         $(this).attr("src", $(this).attr("data-still"));
+         $(this).attr("data-state", "still");
+       }
+
+ })
