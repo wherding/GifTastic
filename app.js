@@ -20,14 +20,14 @@ $(".sub").on("click", function(){
     var text = $(".userInput").val();
     if (text) {
         var text = $(".userInput").val();
-        console.log(text);
+        
         $(".userInput").val("");
         var btn = $("<button>")
         btn.text(text);
         btn.attr("data-text",text);
         btn.addClass("search");
         $(".container").append(btn);
-        console.log("text is true")
+        
     }
  
 
@@ -38,14 +38,13 @@ $(document).on("click", ".search", function(){
     var person="";
     $("#gifs-appear-here").empty()
     person = $(this).attr("data-text")
-    console.log(this);
     queryurl = "http://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=gu0Ti6yuREivJrjmjgzOocWTnr7pJQ9I&limit=10"
 
     $.ajax({
         url: queryurl,
         method:"GET"
     }).then(function(response){
-        console.log(response)
+        
         //begin copy
         var results = response.data;
 
@@ -94,15 +93,14 @@ $(document).on("click", ".search", function(){
 $(document).on("click", ".gif", function() {
     // $(".gif").on("click", function(){
      //look at the state to determine which url to update the src with. 
-     console.log(this);
+     
      var state = $(this).attr("data-state");
-     console.log(state);
      if (state === "still") {
-         console.log('State was still');
+         
          $(this).attr("src", $(this).attr("data-animate"));
          $(this).attr("data-state", "animate");
        } else {
-         console.log('State was animated');
+         
          $(this).attr("src", $(this).attr("data-still"));
          $(this).attr("data-state", "still");
        }
