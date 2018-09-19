@@ -38,7 +38,7 @@ $(document).on("click", ".search", function(){
     var person="";
     $("#gifs-appear-here").empty()
     person = $(this).attr("data-text")
-    queryurl = "http://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=gu0Ti6yuREivJrjmjgzOocWTnr7pJQ9I&limit=10"
+    queryurl = "https://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=gu0Ti6yuREivJrjmjgzOocWTnr7pJQ9I&limit=10"
 
     $.ajax({
         url: queryurl,
